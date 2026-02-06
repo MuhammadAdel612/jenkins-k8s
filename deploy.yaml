@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 2 # Specifies 2 desired pods
+  replicas: 5 # Specifies 2 desired pods
   template:
     metadata:
       labels:
