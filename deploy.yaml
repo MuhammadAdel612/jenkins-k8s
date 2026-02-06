@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-jenkins
+  namespace: koko
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2 # Specifies 2 desired pods
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest # Uses the official nginx image from Docker Hub
+        ports:
+        - containerPort: 80
